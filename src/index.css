@@ -1,0 +1,114 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 20 15% 7%;
+    --foreground: 40 30% 92%;
+
+    --card: 20 12% 10%;
+    --card-foreground: 40 30% 92%;
+
+    --popover: 20 12% 10%;
+    --popover-foreground: 40 30% 92%;
+
+    --primary: 43 55% 55%;
+    --primary-foreground: 20 15% 7%;
+
+    --secondary: 20 10% 14%;
+    --secondary-foreground: 40 30% 92%;
+
+    --muted: 20 10% 13%;
+    --muted-foreground: 35 15% 52%;
+
+    --accent: 350 42% 32%;
+    --accent-foreground: 40 30% 92%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 40 30% 92%;
+
+    --border: 30 10% 20%;
+    --input: 30 10% 20%;
+    --ring: 43 55% 55%;
+
+    --radius: 0rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: "DM Sans", system-ui, sans-serif;
+    font-weight: 300;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "Playfair Display", Georgia, serif;
+  }
+}
+
+@layer components {
+  .label-caps {
+    font-family: "DM Sans", system-ui, sans-serif;
+    font-size: 0.65rem;
+    font-weight: 400;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    display: block;
+  }
+
+  .verve-rule {
+    display: block;
+    height: 1px;
+    width: 100%;
+    transform-origin: left;
+    background: linear-gradient(90deg, hsl(var(--primary)) 0%, transparent 100%);
+  }
+
+  .verve-rule-center {
+    display: block;
+    height: 1px;
+    width: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      hsl(var(--primary) / 0.5) 50%,
+      transparent 100%
+    );
+  }
+
+  .verve-ornament {
+    @apply flex items-center gap-3;
+    color: hsl(var(--primary) / 0.6);
+  }
+
+  .verve-ornament::before,
+  .verve-ornament::after {
+    content: '';
+    @apply block h-px flex-1;
+    background: hsl(var(--primary) / 0.3);
+  }
+
+  .scroll-reveal {
+    @apply opacity-0 translate-y-4 transition-all duration-700;
+  }
+
+  .scroll-reveal.revealed {
+    @apply opacity-100 translate-y-0;
+  }
+}
+
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--primary) / 0.2);
+  border-radius: 0;
+}
+
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
