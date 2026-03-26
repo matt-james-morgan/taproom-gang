@@ -19,7 +19,7 @@ const About = () => (
             </h2>
             {/* TODO: Replace with real biography */}
             <p className="font-serif italic text-xl md:text-2xl text-foreground/90 leading-relaxed mb-6">
-              Matt Smith is a jazz trumpet player and composer based in Toronto.
+              Matt King-Smith is a jazz trumpet player and composer based in Toronto.
             </p>
             <p className="text-foreground/70 leading-relaxed mb-4 font-sans font-light text-base md:text-lg">
               Over the past decade, he has performed at venues and festivals across Canada and beyond, bringing a distinctive voice to the classic jazz tradition. His music draws from the hard bop lineage while maintaining an original, contemporary sensibility.
@@ -35,12 +35,11 @@ const About = () => (
         <div className="md:col-span-5">
           <FadeIn delay={150}>
             <div className="relative aspect-[3/4] overflow-hidden">
-              {/* TODO: Replace with real about portrait photo */}
-              <div className="w-full h-full bg-muted flex items-center justify-center">
-                <p className="label-caps text-muted-foreground text-center px-4">
-                  About photo coming soon
-                </p>
-              </div>
+              <img
+                src="/images/matt/mattKingSmithPerformance.jpeg"
+                alt="Matt King-Smith performing"
+                className="w-full h-full object-cover"
+              />
             </div>
           </FadeIn>
         </div>

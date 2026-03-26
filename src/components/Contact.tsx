@@ -41,24 +41,55 @@ const Contact = () => (
             {/* Social */}
             <div>
               <p className="label-caps text-muted-foreground mb-4">Follow</p>
-              <div className="flex gap-6">
+              <div className="flex flex-wrap gap-6">
                 <a
-                  href="#"
+                  href="https://www.instagram.com/matt.ja.smith"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="label-caps text-foreground/50 hover:text-primary transition-colors"
                 >
-                  {/* TODO: Replace with real Instagram link */}
                   Instagram
                 </a>
                 <a
-                  href="#"
+                  href="https://www.youtube.com/@mattsmithtrumpet/videos"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="label-caps text-foreground/50 hover:text-primary transition-colors"
                 >
-                  {/* TODO: Replace with real YouTube link */}
                   YouTube
+                </a>
+                <a
+                  href="https://open.spotify.com/artist/0fNWRJ89HfzhPgaPuPnOC1"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="label-caps text-foreground/50 hover:text-primary transition-colors"
+                >
+                  Spotify
+                </a>
+              </div>
+            </div>
+
+            <VerveRule variant="fade" className="opacity-30" />
+
+            {/* Also plays in */}
+            <div>
+              <p className="label-caps text-muted-foreground mb-4">Also Plays In</p>
+              <div className="flex flex-wrap gap-6">
+                <a
+                  href="https://open.spotify.com/artist/4ccByuNEWwR0wwLyNgxRkX"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="label-caps text-foreground/50 hover:text-primary transition-colors"
+                >
+                  The Tap Room Gang
+                </a>
+                <a
+                  href="https://open.spotify.com/artist/699HfpoetnBNCFAES0hksJ"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="label-caps text-foreground/50 hover:text-primary transition-colors"
+                >
+                  Big Smoke Brass
                 </a>
               </div>
             </div>
