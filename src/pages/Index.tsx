@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
+import Photos from "@/components/Photos";
 import Discography from "@/components/Discography";
 import Shows from "@/components/Shows";
 import Press from "@/components/Press";
@@ -13,6 +14,7 @@ const Index = () => (
     <Header />
     <Hero />
     <About />
+    <Photos />
     <Discography />
     <Shows />
     <Press />

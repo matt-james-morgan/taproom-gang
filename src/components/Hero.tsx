@@ -16,7 +16,7 @@ const Hero = () => (
                 Matt
               </h1>
               <h1 className="font-serif font-bold leading-none text-[13vw] md:text-[6vw] text-primary">
-                King-Smith
+                Smith
               </h1>
             </div>
             <VerveRule className="mt-6 mb-8" />
@@ -31,8 +31,8 @@ const Hero = () => (
           <FadeIn delay={200}>
             <div className="relative aspect-[3/4] overflow-hidden">
               <img
-                src="/images/matt/mattKingSmithHeadshot.jpg"
-                alt="Matt King-Smith"
+                src="/images/matt/1 Use me.jpg"
+                alt="Matt Smith"
                 className="w-full h-full object-cover"
               />
             </div>

@@ -4,33 +4,36 @@
 
 @layer base {
   :root {
-    --background: 20 15% 7%;
-    --foreground: 40 30% 92%;
+    /* Warm off-white — matches the clean studio photo backgrounds */
+    --background: 36 18% 94%;
+    --foreground: 218 28% 13%;
 
-    --card: 20 12% 10%;
-    --card-foreground: 40 30% 92%;
+    --card: 36 14% 89%;
+    --card-foreground: 218 28% 13%;
 
-    --popover: 20 12% 10%;
-    --popover-foreground: 40 30% 92%;
+    --popover: 36 14% 89%;
+    --popover-foreground: 218 28% 13%;
 
-    --primary: 43 55% 55%;
-    --primary-foreground: 20 15% 7%;
+    /* Cobalt blue — his blazer, the dominant colour in every studio shot */
+    --primary: 217 65% 46%;
+    --primary-foreground: 36 18% 96%;
 
-    --secondary: 20 10% 14%;
-    --secondary-foreground: 40 30% 92%;
+    --secondary: 36 12% 84%;
+    --secondary-foreground: 218 28% 13%;
 
-    --muted: 20 10% 13%;
-    --muted-foreground: 35 15% 52%;
+    --muted: 36 12% 86%;
+    --muted-foreground: 218 12% 44%;
 
-    --accent: 350 42% 32%;
-    --accent-foreground: 40 30% 92%;
+    /* Warm amber — his sunglasses / brass instruments */
+    --accent: 38 88% 50%;
+    --accent-foreground: 218 28% 13%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 40 30% 92%;
+    --destructive: 0 72% 50%;
+    --destructive-foreground: 36 18% 96%;
 
-    --border: 30 10% 20%;
-    --input: 30 10% 20%;
-    --ring: 43 55% 55%;
+    --border: 36 12% 78%;
+    --input: 36 12% 78%;
+    --ring: 217 65% 46%;
 
     --radius: 0rem;
   }
@@ -45,12 +48,22 @@
     @apply bg-background text-foreground antialiased;
     font-family: "DM Sans", system-ui, sans-serif;
     font-weight: 300;
+    background-image: radial-gradient(circle, hsl(218 28% 13% / 0.1) 1px, transparent 1px);
+    background-size: 18px 18px;
+  }
+
+  /* Dot pattern carried through on all sections/header/footer so solid
+     bg-background and bg-card don't bury it */
+  section, header, footer {
+    background-image: radial-gradient(circle, hsl(218 28% 13% / 0.1) 1px, transparent 1px);
+    background-size: 18px 18px;
   }
 
   h1, h2, h3, h4, h5, h6 {
     font-family: "Playfair Display", Georgia, serif;
   }
 }
+
 
 @layer components {
   .label-caps {

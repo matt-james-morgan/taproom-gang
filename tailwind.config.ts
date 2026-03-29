@@ -54,24 +54,24 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        gold: {
-          DEFAULT: "#C9A84C",
-          light: "#E8D5A3",
-          dark: "#9C7A2E",
+        cobalt: {
+          DEFAULT: "#2B62C4",
+          light: "#5B89D8",
+          dark: "#1A3F82",
         },
-        burgundy: {
-          DEFAULT: "#722F37",
-          light: "#9B4A55",
-          dark: "#4A1E23",
+        amber: {
+          DEFAULT: "#D97706",
+          light: "#FBBF24",
+          dark: "#92400E",
         },
-        ink: {
-          50: "#f5f0e8",
-          100: "#ede5d0",
-          200: "#d4c49a",
-          300: "#b8a06a",
-          400: "#8c7240",
-          900: "#140e0a",
-          950: "#0c0806",
+        stone: {
+          50: "#f5f2ed",
+          100: "#ede8e0",
+          200: "#d9d0c3",
+          300: "#c0b49f",
+          400: "#a09178",
+          900: "#1e1c18",
+          950: "#13110e",
         },
       },
       borderRadius: {
