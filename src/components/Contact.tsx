@@ -17,7 +17,7 @@ const Contact = () => (
             Get in Touch
           </h2>
           <p className="text-foreground/60 font-light leading-relaxed text-base md:text-lg max-w-md">
-            For booking, media inquiries, collaborations, and commissions, reach out directly.
+            For booking, media inquiries, and collaborations, reach out directly.
           </p>
         </FadeIn>
 
@@ -28,11 +28,11 @@ const Contact = () => (
             <div>
               <p className="label-caps text-muted-foreground mb-2">Email</p>
               <a
-                href="mailto:placeholder@example.com"
+                href="mailto:thetaproomgang@gmail.com"
                 className="font-serif italic text-xl md:text-2xl text-foreground hover:text-primary transition-colors"
               >
                 {/* TODO: Replace with real email */}
-                placeholder@example.com
+                thetaproomgang@gmail.com
               </a>
             </div>
 
@@ -43,7 +43,7 @@ const Contact = () => (
               <p className="label-caps text-muted-foreground mb-4">Follow</p>
               <div className="flex flex-wrap gap-6">
                 <a
-                  href="https://www.instagram.com/matt.ja.smith"
+                  href="https://www.instagram.com/thetaproomgang"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="label-caps text-foreground/50 hover:text-primary transition-colors"
@@ -51,7 +51,7 @@ const Contact = () => (
                   Instagram
                 </a>
                 <a
-                  href="https://www.youtube.com/@mattsmithtrumpet/videos"
+                  href="https://youtube.com/@thetaproomgang"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="label-caps text-foreground/50 hover:text-primary transition-colors"
@@ -59,37 +59,12 @@ const Contact = () => (
                   YouTube
                 </a>
                 <a
-                  href="https://open.spotify.com/artist/0fNWRJ89HfzhPgaPuPnOC1"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="label-caps text-foreground/50 hover:text-primary transition-colors"
-                >
-                  Spotify
-                </a>
-              </div>
-            </div>
-
-            <VerveRule variant="fade" className="opacity-30" />
-
-            {/* Also plays in */}
-            <div>
-              <p className="label-caps text-muted-foreground mb-4">Also Plays In</p>
-              <div className="flex flex-wrap gap-6">
-                <a
                   href="https://open.spotify.com/artist/4ccByuNEWwR0wwLyNgxRkX"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="label-caps text-foreground/50 hover:text-primary transition-colors"
                 >
-                  The Tap Room Gang
-                </a>
-                <a
-                  href="https://open.spotify.com/artist/699HfpoetnBNCFAES0hksJ"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="label-caps text-foreground/50 hover:text-primary transition-colors"
-                >
-                  Big Smoke Brass
+                  Spotify
                 </a>
               </div>
             </div>

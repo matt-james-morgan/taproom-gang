@@ -19,15 +19,28 @@ const About = () => (
             </h2>
             {/* TODO: Replace with real biography */}
             <p className="font-serif italic text-xl md:text-2xl text-foreground/90 leading-relaxed mb-6">
-              Matt Smith is a jazz trumpet player and composer based in Toronto.
+              The Tap Room Gang is a collaborative quartet that brings fresh, interactive takes on classics and hidden gems from the 1920s and '30s hot jazz repertoire.
             </p>
             <p className="text-foreground/70 leading-relaxed mb-4 font-sans font-light text-base md:text-lg">
-              Over the past decade, he has performed at venues and festivals across Canada and beyond, bringing a distinctive voice to the classic jazz tradition. His music draws from the hard bop lineage while maintaining an original, contemporary sensibility.
+              They hold a weekly residency on Monday nights at Steadfast Brewing Co. in Toronto, where they have become a local staple for musicians, dancers, and jazz fans alike.
             </p>
-            <p className="text-foreground/70 leading-relaxed font-sans font-light text-base md:text-lg">
-              {/* TODO: Additional biography paragraphs to be supplied */}
-              Biography to be updated.
+            <p className="text-foreground/70 leading-relaxed mb-8 font-sans font-light text-base md:text-lg">
+              The Tap Room Gang recently released their debut record, <em>Every Day Is Monday</em>, which received a Silver Medal from the International Trumpet Guild for their 2025 Recorded Music Awards in the Jazz category.
             </p>
+            <div className="border-l-2 border-primary/40 pl-5 space-y-2">
+              <p className="label-caps text-muted-foreground mb-3">The Gang</p>
+              {[
+                ["Sean McCarthy", "Bass Saxophone & Leader"],
+                ["Matt Smith", "Cornet"],
+                ["Taylor Maslin", "Clarinet & Tenor Saxophone"],
+                ["Jared Higgins", "Banjo"],
+              ].map(([name, role]) => (
+                <div key={name} className="flex gap-3 items-baseline">
+                  <span className="font-serif text-foreground/90 text-sm">{name}</span>
+                  <span className="text-muted-foreground text-xs font-light tracking-wide">— {role}</span>
+                </div>
+              ))}
+            </div>
           </FadeIn>
         </div>
 
@@ -36,9 +49,9 @@ const About = () => (
           <FadeIn delay={150}>
             <div className="relative aspect-[3/4] overflow-hidden">
               <img
-                src="/images/matt/1 Use me (1).jpg"
-                alt="Matt Smith"
-                className="w-full h-full object-cover"
+                src="/images/taproom/horizontal-4pc.jpg"
+                alt="The Tap Room Gang"
+                className="w-full h-full object-cover object-center"
               />
             </div>
           </FadeIn>

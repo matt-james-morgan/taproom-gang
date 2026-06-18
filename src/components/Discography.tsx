@@ -20,7 +20,7 @@ const Discography = () => (
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8">
         {discography.map((album, i) => (
           <FadeIn key={album.title} delay={i * 80}>
-            <div className="group border border-border hover:border-primary/60 transition-colors duration-300 p-0">
+            <div className="group border border-white/15 hover:border-white/35 transition-colors duration-300 p-0 bg-card">
               {/* Cover art */}
               <div className="aspect-square bg-muted overflow-hidden">
                 {album.coverArtWebp || album.coverArt ? (
@@ -50,7 +50,7 @@ const Discography = () => (
                   {album.title}
                 </h3>
                 <VerveRule className="my-2" />
-                <p className="label-caps text-muted-foreground">
+                <p className="label-caps text-foreground/60">
                   {album.year}{album.label ? ` · ${album.label}` : ""}
                 </p>
                 {album.description && (
@@ -67,7 +67,7 @@ const Discography = () => (
                         href={album.streamingLinks.spotify}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="label-caps text-primary/60 hover:text-primary transition-colors flex items-center gap-1"
+                        className="label-caps text-accent hover:text-accent/80 transition-colors flex items-center gap-1"
                       >
                         Spotify <ExternalLink size={9} />
                       </a>
@@ -77,7 +77,7 @@ const Discography = () => (
                         href={album.streamingLinks.appleMusic}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="label-caps text-primary/60 hover:text-primary transition-colors flex items-center gap-1"
+                        className="label-caps text-accent hover:text-accent/80 transition-colors flex items-center gap-1"
                       >
                         Apple <ExternalLink size={9} />
                       </a>
@@ -87,7 +87,7 @@ const Discography = () => (
                         href={album.streamingLinks.bandcamp}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="label-caps text-primary/60 hover:text-primary transition-colors flex items-center gap-1"
+                        className="label-caps text-accent hover:text-accent/80 transition-colors flex items-center gap-1"
                       >
                         Bandcamp <ExternalLink size={9} />
                       </a>

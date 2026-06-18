@@ -4,36 +4,37 @@
 
 @layer base {
   :root {
-    /* Warm off-white — matches the clean studio photo backgrounds */
-    --background: 36 18% 94%;
-    --foreground: 218 28% 13%;
+    /* Near-black with warm wine undertone — matches the dark backdrop in photos */
+    --background: 345 25% 7%;
+    --foreground: 36 50% 88%;
 
-    --card: 36 14% 89%;
-    --card-foreground: 218 28% 13%;
+    /* Slightly lifted dark — alternating section bg */
+    --card: 345 22% 11%;
+    --card-foreground: 36 50% 88%;
 
-    --popover: 36 14% 89%;
-    --popover-foreground: 218 28% 13%;
+    --popover: 345 22% 11%;
+    --popover-foreground: 36 50% 88%;
 
-    /* Cobalt blue — his blazer, the dominant colour in every studio shot */
-    --primary: 217 65% 46%;
-    --primary-foreground: 36 18% 96%;
+    /* Deep burgundy — the curtain, the dominant colour in every shot */
+    --primary: 345 58% 38%;
+    --primary-foreground: 36 50% 92%;
 
-    --secondary: 36 12% 84%;
-    --secondary-foreground: 218 28% 13%;
+    --secondary: 345 18% 18%;
+    --secondary-foreground: 36 50% 88%;
 
-    --muted: 36 12% 86%;
-    --muted-foreground: 218 12% 44%;
+    --muted: 345 18% 16%;
+    --muted-foreground: 36 20% 58%;
 
-    /* Warm amber — his sunglasses / brass instruments */
-    --accent: 38 88% 50%;
-    --accent-foreground: 218 28% 13%;
+    /* Brass gold — the trumpet and tuba */
+    --accent: 38 72% 48%;
+    --accent-foreground: 345 25% 7%;
 
-    --destructive: 0 72% 50%;
-    --destructive-foreground: 36 18% 96%;
+    --destructive: 0 62% 48%;
+    --destructive-foreground: 36 50% 92%;
 
-    --border: 36 12% 78%;
-    --input: 36 12% 78%;
-    --ring: 217 65% 46%;
+    --border: 345 22% 20%;
+    --input: 345 22% 20%;
+    --ring: 345 58% 38%;
 
     --radius: 0rem;
   }
@@ -48,14 +49,14 @@
     @apply bg-background text-foreground antialiased;
     font-family: "DM Sans", system-ui, sans-serif;
     font-weight: 300;
-    background-image: radial-gradient(circle, hsl(218 28% 13% / 0.1) 1px, transparent 1px);
+    background-image: radial-gradient(circle, hsl(345 58% 38% / 0.08) 1px, transparent 1px);
     background-size: 18px 18px;
   }
 
   /* Dot pattern carried through on all sections/header/footer so solid
      bg-background and bg-card don't bury it */
   section, header, footer {
-    background-image: radial-gradient(circle, hsl(218 28% 13% / 0.1) 1px, transparent 1px);
+    background-image: radial-gradient(circle, hsl(345 58% 38% / 0.08) 1px, transparent 1px);
     background-size: 18px 18px;
   }
 

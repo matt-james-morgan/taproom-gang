@@ -3,24 +3,10 @@ import SectionLabel from "./ui-custom/SectionLabel";
 import VerveRule from "./ui-custom/VerveRule";
 
 const photos = [
-  { src: "/images/matt/BIGSMOKEBRASS_EDITORIAL_BIGSMOKEBRASSGROUPSHOOT6871.jpg", alt: "Big Smoke Brass" },
-  { src: "/images/matt/BIGSMOKE_SOCIAL_BIGSMOKEBRASSGROUPSHOOT5516.jpg", alt: "Matt Smith & Big Smoke Brass" },
-  { src: "/images/matt/Headshot (2).JPEG", alt: "Matt Smith" },
-  { src: "/images/matt/BIGSMOKE_SOCIAL_BIGSMOKEBRASSGROUPSHOOT6998.jpg", alt: "Big Smoke Brass" },
-  { src: "/images/matt/BIGSMOKEBRASS_EDITORIAL_BIGSMOKEBRASSGROUPSHOOT55791.jpg", alt: "Big Smoke Brass" },
-  { src: "/images/matt/IMG_1798.jpg", alt: "Matt Smith live on stage" },
-  { src: "/images/matt/BIGSMOKE_SOCIAL_BIGSMOKEBRASSGROUPSHOOT7011.jpg", alt: "Big Smoke Brass" },
-  { src: "/images/matt/MattKStrio.JPEG", alt: "Matt Smith Trio" },
-  { src: "/images/matt/Photoshoot Hang (Oct 15th)03.jpg", alt: "Matt Smith" },
-  { src: "/images/matt/BIGSMOKEBRASS_EDITORIAL_BIGSMOKEBRASSGROUPSHOOT6032copy1.jpg", alt: "Big Smoke Brass editorial" },
-  { src: "/images/matt/TRG_Rex.jpeg", alt: "Matt Smith with trumpet" },
-  { src: "/images/matt/BIGSMOKE_SOCIAL_BIGSMOKEBRASSGROUPSHOOT5539.jpg", alt: "Big Smoke Brass" },
-  { src: "/images/matt/Photoshoot Hang (Oct 15th)05.jpg", alt: "Matt Smith" },
-  { src: "/images/matt/BIGSMOKEBRASS_EDITORIAL_BIGSMOKEBRASSGROUPSHOOT7088.jpg", alt: "Big Smoke Brass editorial" },
-  { src: "/images/matt/TRG_Rex_1.jpeg", alt: "Matt Smith" },
-  { src: "/images/matt/IMG_1929.jpg", alt: "Matt Smith live" },
-  { src: "/images/matt/Photoshoot Hang (Oct 15th)14.jpg", alt: "Matt Smith" },
-  { src: "/images/matt/bsb_objx_0504231807 1.jpg", alt: "Big Smoke Brass" },
+  { src: "/images/taproom/vertical-4pc.jpg", alt: "The Tap Room Gang — portrait" },
+  { src: "/images/taproom/funny.jpg", alt: "The Tap Room Gang — live" },
+  { src: "/images/taproom/horizontal-4pc.jpg", alt: "The Tap Room Gang — group" },
+  { src: "/images/taproom/funny-2.jpg", alt: "The Tap Room Gang — live" },
 ];
 
 const Photos = () => (
@@ -38,7 +24,7 @@ const Photos = () => (
 
       <div className="columns-1 sm:columns-2 lg:columns-3 gap-3">
         {photos.map((photo, i) => (
-          <FadeIn key={i} delay={Math.min(i * 40, 300)}>
+          <FadeIn key={i} delay={Math.min(i * 80, 300)}>
             <div className="break-inside-avoid mb-3 overflow-hidden group relative">
               <img
                 src={photo.src}

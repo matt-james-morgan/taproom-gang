@@ -12,20 +12,15 @@ const navItems = [
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isHidden, setIsHidden] = useState(false);
-  const [lastScrollY, setLastScrollY] = useState(0);
   const [mobileOpen, setMobileOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      const currentY = window.scrollY;
-      setIsScrolled(currentY > 50);
-      setIsHidden(currentY > lastScrollY && currentY > 300);
-      setLastScrollY(currentY);
+      setIsScrolled(window.scrollY > 50);
     };
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [lastScrollY]);
+  }, []);
 
   const scrollTo = (id: string) => {
     setMobileOpen(false);
@@ -40,8 +35,6 @@ const Header = () => {
     <>
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          isHidden ? "-translate-y-full" : "translate-y-0"
-        } ${
           isScrolled
             ? "bg-background/95 backdrop-blur-sm border-b border-primary/10"
             : "bg-transparent"
@@ -51,9 +44,14 @@ const Header = () => {
           {/* Logo */}
           <button
             onClick={() => scrollTo("home")}
-            className="font-serif italic text-sm tracking-[0.15em] text-foreground/90 hover:text-primary transition-colors"
+            className="hover:opacity-80 transition-opacity"
+            aria-label="The Tap Room Gang — home"
           >
-            Matt Smith
+            <img
+              src="/images/taproom/logo-primary-white.png"
+              alt="The Tap Room Gang"
+              className="h-12 w-auto"
+            />
           </button>
 
           {/* Desktop nav */}
@@ -62,7 +60,7 @@ const Header = () => {
               <button
                 key={item.id}
                 onClick={() => scrollTo(item.id)}
-                className="label-caps text-foreground/60 hover:text-primary transition-colors"
+                className="text-[0.85rem] font-sans font-medium tracking-[0.2em] uppercase text-white/80 hover:text-white transition-colors"
               >
                 {item.label}
               </button>
@@ -84,9 +82,11 @@ const Header = () => {
       {mobileOpen && (
         <div className="fixed inset-0 z-50 bg-background/98 backdrop-blur-sm flex flex-col">
           <div className="flex justify-between items-center px-8 h-16">
-            <span className="font-serif italic text-sm tracking-[0.15em] text-foreground/90">
-              Matt Smith
-            </span>
+            <img
+              src="/images/taproom/logo-primary-white.png"
+              alt="The Tap Room Gang"
+              className="h-12 w-auto"
+            />
             <button
               onClick={() => setMobileOpen(false)}
               className="text-foreground/70 hover:text-primary transition-colors"

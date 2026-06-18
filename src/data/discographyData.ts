@@ -15,13 +15,11 @@ export interface Album {
 
 export const discography: Album[] = [
   {
-    title: "Matt King-Smith Trio",
-    year: "2024",
-    label: "909 Records",
-    description: "Album description to be supplied.",
-    coverArt: "/images/matt/albums/mattKingSmithTrio.jpg",
+    title: "Every Day Is Monday",
+    year: "2025",
+    coverArt: "https://image-cdn-ak.spotifycdn.com/image/ab67616d00001e026ccb8d183158ecbc15d3c0ad",
     streamingLinks: {
-      bandcamp: "https://mattking-smith.bandcamp.com/album/matt-king-smith-trio",
+      spotify: "https://open.spotify.com/artist/4ccByuNEWwR0wwLyNgxRkX",
     },
   },
 ];
