@@ -19,7 +19,7 @@ const VideoPlayer = ({ id, title }: { id: string; title: string }) => (
 );
 
 const Media = () => (
-  <section id="media" className="py-24 md:py-36 bg-background">
+  <section id="media" className="py-20 md:py-28 bg-background">
     <div className="container mx-auto px-8 md:px-16">
       <VerveRule variant="ornament" className="mb-16">
         <SectionLabel>Media</SectionLabel>

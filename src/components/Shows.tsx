@@ -2,15 +2,21 @@ import { ExternalLink } from "lucide-react";
 import FadeIn from "./animations/FadeIn";
 import SectionLabel from "./ui-custom/SectionLabel";
 import VerveRule from "./ui-custom/VerveRule";
-import { useShows } from "@/hooks/useShows";
+import { useShows, type ShowData } from "@/hooks/useShows";
 
 const MONTHS = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+const parseShowDate = (value: string): Date | null => {
+  if (!value) return null;
+  const parsed = new Date(value);
+  return Number.isNaN(parsed.getTime()) ? null : parsed;
+};
 
 const Shows = () => {
   const { data, isLoading } = useShows();
 
   return (
-    <section id="shows" className="py-24 md:py-36 bg-background">
+    <section id="shows" className="py-20 md:py-28 bg-background">
       <div className="container mx-auto px-8 md:px-16">
         <VerveRule variant="ornament" className="mb-16">
           <SectionLabel>Performances</SectionLabel>
@@ -32,44 +38,66 @@ const Shows = () => {
           </FadeIn>
         ) : (
           <div>
-            {data.map((show: Record<string, string>, i: number) => {
-              const date = show.date ? new Date(show.date) : null;
-              const month = date ? MONTHS[date.getMonth()] : "";
-              const day = date ? date.getDate() : "";
+            {data.map((show: ShowData, i: number) => {
+              const parsedDate = parseShowDate(show.date);
+              const month = parsedDate ? MONTHS[parsedDate.getMonth()] : null;
+              const day = parsedDate ? parsedDate.getDate() : null;
 
               return (
                 <FadeIn key={i} delay={i * 60}>
                   <div className="py-6 group">
-                    <div className="flex items-center gap-6 md:gap-10">
-                      {/* Date */}
-                      <div className="w-16 flex-shrink-0 text-center">
-                        <p className="label-caps text-primary">{month}</p>
-                        <p className="font-serif text-3xl leading-none text-foreground">
-                          {day}
-                        </p>
+                    <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 md:gap-10">
+                      <div className="flex items-center gap-6 md:gap-10 flex-1 min-w-0">
+                        {/* Date */}
+                        <div className="w-16 flex-shrink-0 text-center">
+                          {parsedDate ? (
+                            <>
+                              <p className="label-caps text-muted-foreground">{month}</p>
+                              <p className="font-serif text-3xl leading-none text-foreground">
+                                {day}
+                              </p>
+                            </>
+                          ) : (
+                            <p className="label-caps text-muted-foreground leading-tight">
+                              {show.date}
+                            </p>
+                          )}
+                        </div>
+
+                        {/* Venue info */}
+                        <div className="flex-1 min-w-0">
+                          <p className="font-serif text-lg md:text-xl text-foreground leading-snug">
+                            {show.venue}
+                          </p>
+                          <p className="label-caps text-muted-foreground mt-1">
+                            {[show.time, show.address].filter(Boolean).join(" · ")}
+                          </p>
+                        </div>
                       </div>
 
-                      {/* Venue info */}
-                      <div className="flex-1 min-w-0">
-                        <p className="font-serif text-lg md:text-xl text-foreground leading-snug">
-                          {show.venue || show["Name of Production"] || "TBA"}
-                        </p>
-                        <p className="label-caps text-muted-foreground mt-1">
-                          {[show.city, show.time].filter(Boolean).join(" · ")}
-                        </p>
+                      {/* Links */}
+                      <div className="flex flex-wrap items-center gap-3 sm:flex-shrink-0">
+                        {show.linkToEvent && (
+                          <a
+                            href={show.linkToEvent}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center gap-2 label-caps text-foreground/50 border border-foreground/20 px-4 py-2 hover:border-primary hover:text-primary transition-colors"
+                          >
+                            Details <ExternalLink size={10} />
+                          </a>
+                        )}
+                        {show.ticketUrl && (
+                          <a
+                            href={show.ticketUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center gap-2 label-caps text-foreground/50 border border-foreground/20 px-4 py-2 hover:border-primary hover:text-primary transition-colors"
+                          >
+                            Tickets <ExternalLink size={10} />
+                          </a>
+                        )}
                       </div>
-
-                      {/* Ticket link */}
-                      {show.ticketUrl && show.ticketUrl !== "PLACEHOLDER_GOOGLE_SHEETS_CSV_URL" && (
-                        <a
-                          href={show.ticketUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex-shrink-0 flex items-center gap-2 label-caps text-foreground/50 border border-foreground/20 px-4 py-2 hover:border-primary hover:text-primary transition-colors"
-                        >
-                          Tickets <ExternalLink size={10} />
-                        </a>
-                      )}
                     </div>
                     <VerveRule variant="fade" className="mt-6 opacity-20" />
                   </div>

@@ -3,7 +3,6 @@ import { Menu, X } from "lucide-react";
 
 const navItems = [
   { label: "About", id: "about" },
-  { label: "Photos", id: "photos" },
   { label: "Discography", id: "discography" },
   { label: "Shows", id: "shows" },
   { label: "Media", id: "media" },
@@ -60,7 +59,7 @@ const Header = () => {
               <button
                 key={item.id}
                 onClick={() => scrollTo(item.id)}
-                className="text-[0.85rem] font-sans font-medium tracking-[0.2em] uppercase text-white/80 hover:text-white transition-colors"
+                className="text-[0.85rem] font-sans font-medium tracking-[0.2em] uppercase text-foreground/80 hover:text-foreground transition-colors"
               >
                 {item.label}
               </button>

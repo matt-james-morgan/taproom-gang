@@ -1,18 +1,32 @@
+import { useMemo } from "react";
 import { useGoogleSheetPublished } from "./useGoogleSheetPublished";
 
-// TODO: Replace with your published Google Sheets CSV URL
-// Steps: File > Share > Publish to web > select sheet > CSV format > copy link
-const SHEET_URL = "PLACEHOLDER_GOOGLE_SHEETS_CSV_URL";
+// File > Share > Publish to web > select sheet > CSV format > copy link
+const SHEET_URL =
+  "https://docs.google.com/spreadsheets/d/e/2PACX-1vQMIpMZ8iyU_p4RuOVGXgMumFL5NEOGlQlA8RXj6n0vRphHo3qZ4HzooVaMKZ9s2bZ4QjGHvEapYRnE/pub?output=csv";
 
 export interface ShowData {
   venue: string;
   date: string;
   time?: string;
-  city?: string;
+  address?: string;
+  linkToEvent?: string;
   ticketUrl?: string;
-  notes?: string;
 }
 
 export const useShows = () => {
-  return useGoogleSheetPublished({ sheetUrl: SHEET_URL });
+  const query = useGoogleSheetPublished({ sheetUrl: SHEET_URL });
+
+  const data = useMemo<ShowData[] | undefined>(() => {
+    return query.data?.map((row) => ({
+      venue: row["Venue"] || "TBA",
+      date: row["Date"] || "",
+      time: row["Time"] || undefined,
+      address: row["Address"] || undefined,
+      linkToEvent: row["Link To Event"] || undefined,
+      ticketUrl: row["Ticket Link"] || undefined,
+    }));
+  }, [query.data]);
+
+  return { ...query, data };
 };

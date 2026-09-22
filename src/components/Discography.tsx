@@ -5,7 +5,7 @@ import VerveRule from "./ui-custom/VerveRule";
 import { discography } from "@/data/discographyData";
 
 const Discography = () => (
-  <section id="discography" className="py-24 md:py-36 bg-card">
+  <section id="discography" className="py-20 md:py-28 bg-card">
     <div className="container mx-auto px-8 md:px-16">
       <VerveRule variant="ornament" className="mb-16">
         <SectionLabel>Discography</SectionLabel>
@@ -20,7 +20,7 @@ const Discography = () => (
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8">
         {discography.map((album, i) => (
           <FadeIn key={album.title} delay={i * 80}>
-            <div className="group border border-white/15 hover:border-white/35 transition-colors duration-300 p-0 bg-card">
+            <div className="group border border-foreground/15 hover:border-foreground/35 transition-colors duration-300 p-0 bg-card">
               {/* Cover art */}
               <div className="aspect-square bg-muted overflow-hidden">
                 {album.coverArtWebp || album.coverArt ? (
@@ -61,7 +61,7 @@ const Discography = () => (
 
                 {/* Streaming links */}
                 {album.streamingLinks && (
-                  <div className="flex gap-3 mt-3">
+                  <div className="flex flex-wrap gap-x-3 gap-y-2 mt-3">
                     {album.streamingLinks.spotify && (
                       <a
                         href={album.streamingLinks.spotify}

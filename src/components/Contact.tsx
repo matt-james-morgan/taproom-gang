@@ -1,9 +1,10 @@
 import FadeIn from "./animations/FadeIn";
 import SectionLabel from "./ui-custom/SectionLabel";
 import VerveRule from "./ui-custom/VerveRule";
+import { InstagramIcon, YoutubeIcon, SpotifyIcon } from "./icons/SocialIcons";
 
 const Contact = () => (
-  <section id="contact" className="py-24 md:py-36 bg-card">
+  <section id="contact" className="py-20 md:py-28 bg-card">
     <div className="container mx-auto px-8 md:px-16">
       <VerveRule variant="ornament" className="mb-16">
         <SectionLabel>Contact</SectionLabel>
@@ -41,30 +42,33 @@ const Contact = () => (
             {/* Social */}
             <div>
               <p className="label-caps text-muted-foreground mb-4">Follow</p>
-              <div className="flex flex-wrap gap-6">
+              <div className="flex flex-wrap items-center gap-6">
                 <a
-                  href="https://www.instagram.com/thetaproomgang"
+                  href="https://www.instagram.com/thetaproomgang/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="label-caps text-foreground/50 hover:text-primary transition-colors"
+                  aria-label="Instagram"
+                  className="text-foreground hover:text-primary transition-colors"
                 >
-                  Instagram
+                  <InstagramIcon size={30} />
                 </a>
                 <a
                   href="https://youtube.com/@thetaproomgang"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="label-caps text-foreground/50 hover:text-primary transition-colors"
+                  aria-label="YouTube"
+                  className="text-foreground hover:text-primary transition-colors"
                 >
-                  YouTube
+                  <YoutubeIcon size={30} />
                 </a>
                 <a
                   href="https://open.spotify.com/artist/4ccByuNEWwR0wwLyNgxRkX"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="label-caps text-foreground/50 hover:text-primary transition-colors"
+                  aria-label="Spotify"
+                  className="text-foreground hover:text-primary transition-colors"
                 >
-                  Spotify
+                  <SpotifyIcon size={30} />
                 </a>
               </div>
             </div>

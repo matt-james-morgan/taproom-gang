@@ -10,7 +10,7 @@ const SectionLabel = ({ children, className, gold = true }: SectionLabelProps) =
   <p
     className={cn(
       "label-caps",
-      gold ? "text-primary/70" : "text-muted-foreground",
+      gold ? "text-foreground/70" : "text-muted-foreground",
       className
     )}
   >
