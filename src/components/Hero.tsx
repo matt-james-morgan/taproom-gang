@@ -5,7 +5,7 @@ const Hero = () => (
     {/* Full-bleed background photo — already has band name baked in */}
     <img
       src="/images/taproom/horizontal-branded.jpg"
-      alt="The Tap Room Gang"
+      alt="The Tap Room Gang, Toronto traditional jazz quartet"
       className="absolute inset-0 w-full h-full object-contain object-center"
     />
 

@@ -78,7 +78,8 @@ const About = () => (
             <div className="relative aspect-[3/4] overflow-hidden">
               <img
                 src="/images/taproom/band-portrait.jpg"
-                alt="The Tap Room Gang"
+                loading="lazy"
+                alt="Portrait of The Tap Room Gang band members"
                 className="w-full h-full object-cover object-center"
               />
             </div>
