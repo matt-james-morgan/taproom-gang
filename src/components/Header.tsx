@@ -21,13 +21,28 @@ const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Lock page scroll and allow Escape to close while the mobile menu is open
+  useEffect(() => {
+    if (!mobileOpen) return;
+    const onKey = (e: KeyboardEvent) => e.key === "Escape" && setMobileOpen(false);
+    document.body.style.overflow = "hidden";
+    window.addEventListener("keydown", onKey);
+    return () => {
+      document.body.style.overflow = "";
+      window.removeEventListener("keydown", onKey);
+    };
+  }, [mobileOpen]);
+
   const scrollTo = (id: string) => {
     setMobileOpen(false);
-    const el = document.getElementById(id);
-    if (el) {
-      const offset = el.getBoundingClientRect().top + window.scrollY - 80;
-      window.scrollTo({ top: offset, behavior: "smooth" });
-    }
+    // Wait for the scroll lock to release before scrolling
+    setTimeout(() => {
+      const el = document.getElementById(id);
+      if (el) {
+        const offset = el.getBoundingClientRect().top + window.scrollY - 80;
+        window.scrollTo({ top: offset, behavior: "smooth" });
+      }
+    }, 0);
   };
 
   return (
@@ -39,11 +54,11 @@ const Header = () => {
             : "bg-transparent"
         }`}
       >
-        <div className="container mx-auto px-8 md:px-16 h-16 flex items-center justify-between">
+        <div className="container mx-auto px-5 md:px-16 h-16 flex items-center justify-between">
           {/* Logo */}
           <button
             onClick={() => scrollTo("home")}
-            className="hover:opacity-80 transition-opacity"
+            className="py-2 hover:opacity-80 transition-opacity"
             aria-label="The Tap Room Gang — home"
           >
             <img
@@ -59,7 +74,7 @@ const Header = () => {
               <button
                 key={item.id}
                 onClick={() => scrollTo(item.id)}
-                className="text-[0.85rem] font-sans font-medium tracking-[0.2em] uppercase text-foreground/80 hover:text-foreground transition-colors"
+                className="py-2 text-[0.85rem] font-sans font-medium tracking-[0.2em] uppercase text-foreground/80 hover:text-foreground transition-colors"
               >
                 {item.label}
               </button>
@@ -68,19 +83,20 @@ const Header = () => {
 
           {/* Mobile hamburger */}
           <button
-            className="md:hidden text-foreground/70 hover:text-primary transition-colors"
+            className="md:hidden -mr-2 flex h-11 w-11 items-center justify-center text-foreground/80 hover:text-primary transition-colors"
             onClick={() => setMobileOpen(true)}
             aria-label="Open menu"
+            aria-expanded={mobileOpen}
           >
-            <Menu size={20} />
+            <Menu size={26} />
           </button>
         </div>
       </header>
 
       {/* Mobile overlay */}
       {mobileOpen && (
-        <div className="fixed inset-0 z-50 bg-background/98 backdrop-blur-sm flex flex-col">
-          <div className="flex justify-between items-center px-8 h-16">
+        <div className="fixed inset-0 z-[60] bg-background flex flex-col md:hidden" role="dialog" aria-modal="true" aria-label="Menu">
+          <div className="flex justify-between items-center px-5 h-16">
             <img
               src="/images/taproom/logo-primary-white.png"
               alt="The Tap Room Gang"
@@ -88,18 +104,18 @@ const Header = () => {
             />
             <button
               onClick={() => setMobileOpen(false)}
-              className="text-foreground/70 hover:text-primary transition-colors"
+              className="-mr-2 flex h-11 w-11 items-center justify-center text-foreground/80 hover:text-primary transition-colors"
               aria-label="Close menu"
             >
-              <X size={20} />
+              <X size={26} />
             </button>
           </div>
-          <nav className="flex flex-col px-8 pt-8 gap-6">
+          <nav className="flex flex-col px-5 pt-6">
             {navItems.map((item) => (
               <button
                 key={item.id}
                 onClick={() => scrollTo(item.id)}
-                className="label-caps text-foreground/60 hover:text-primary transition-colors text-left border-l-2 border-transparent hover:border-primary pl-3"
+                className="py-4 font-serif text-3xl text-left text-foreground/85 hover:text-primary border-b border-primary/10 transition-colors"
               >
                 {item.label}
               </button>

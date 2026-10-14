@@ -17,7 +17,7 @@ const Shows = () => {
 
   return (
     <section id="shows" className="py-20 md:py-28 bg-background">
-      <div className="container mx-auto px-8 md:px-16">
+      <div className="container mx-auto px-5 md:px-16">
         <VerveRule variant="ornament" className="mb-16">
           <SectionLabel>Performances</SectionLabel>
         </VerveRule>
@@ -82,7 +82,7 @@ const Shows = () => {
                             href={show.linkToEvent}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="flex items-center gap-2 label-caps text-foreground/50 border border-foreground/20 px-4 py-2 hover:border-primary hover:text-primary transition-colors"
+                            className="flex min-h-11 items-center gap-2 label-caps text-foreground/60 border border-foreground/20 px-4 py-2 hover:border-primary hover:text-primary transition-colors"
                           >
                             Details <ExternalLink size={10} />
                           </a>
@@ -92,7 +92,7 @@ const Shows = () => {
                             href={show.ticketUrl}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="flex items-center gap-2 label-caps text-foreground/50 border border-foreground/20 px-4 py-2 hover:border-primary hover:text-primary transition-colors"
+                            className="flex min-h-11 items-center gap-2 label-caps text-foreground/60 border border-foreground/20 px-4 py-2 hover:border-primary hover:text-primary transition-colors"
                           >
                             Tickets <ExternalLink size={10} />
                           </a>

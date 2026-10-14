@@ -5,7 +5,7 @@ import { InstagramIcon, YoutubeIcon, SpotifyIcon } from "./icons/SocialIcons";
 
 const Contact = () => (
   <section id="contact" className="py-20 md:py-28 bg-card">
-    <div className="container mx-auto px-8 md:px-16">
+    <div className="container mx-auto px-5 md:px-16">
       <VerveRule variant="ornament" className="mb-16">
         <SectionLabel>Contact</SectionLabel>
       </VerveRule>
@@ -30,7 +30,7 @@ const Contact = () => (
               <p className="label-caps text-muted-foreground mb-2">Email</p>
               <a
                 href="mailto:thetaproomgang@gmail.com"
-                className="font-serif italic text-xl md:text-2xl text-foreground hover:text-primary transition-colors"
+                className="inline-block py-2 font-serif italic text-xl md:text-2xl text-foreground hover:text-primary transition-colors break-all sm:break-normal"
               >
                 {/* TODO: Replace with real email */}
                 thetaproomgang@gmail.com
@@ -42,13 +42,13 @@ const Contact = () => (
             {/* Social */}
             <div>
               <p className="label-caps text-muted-foreground mb-4">Follow</p>
-              <div className="flex flex-wrap items-center gap-6">
+              <div className="-ml-2.5 flex flex-wrap items-center gap-2">
                 <a
                   href="https://www.instagram.com/thetaproomgang/"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Instagram"
-                  className="text-foreground hover:text-primary transition-colors"
+                  className="flex h-12 w-12 items-center justify-center text-foreground hover:text-primary transition-colors"
                 >
                   <InstagramIcon size={30} />
                 </a>
@@ -57,7 +57,7 @@ const Contact = () => (
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="YouTube"
-                  className="text-foreground hover:text-primary transition-colors"
+                  className="flex h-12 w-12 items-center justify-center text-foreground hover:text-primary transition-colors"
                 >
                   <YoutubeIcon size={30} />
                 </a>
@@ -66,7 +66,7 @@ const Contact = () => (
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Spotify"
-                  className="text-foreground hover:text-primary transition-colors"
+                  className="flex h-12 w-12 items-center justify-center text-foreground hover:text-primary transition-colors"
                 >
                   <SpotifyIcon size={30} />
                 </a>

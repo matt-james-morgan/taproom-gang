@@ -6,7 +6,7 @@ import { discography } from "@/data/discographyData";
 
 const Discography = () => (
   <section id="discography" className="py-20 md:py-28 bg-card">
-    <div className="container mx-auto px-8 md:px-16">
+    <div className="container mx-auto px-5 md:px-16">
       <VerveRule variant="ornament" className="mb-16">
         <SectionLabel>Discography</SectionLabel>
       </VerveRule>
@@ -67,7 +67,7 @@ const Discography = () => (
                         href={album.streamingLinks.spotify}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="label-caps text-accent hover:text-accent/80 transition-colors flex items-center gap-1"
+                        className="min-h-11 label-caps text-accent hover:text-accent/80 transition-colors flex items-center gap-1"
                       >
                         Spotify <ExternalLink size={9} />
                       </a>
@@ -77,7 +77,7 @@ const Discography = () => (
                         href={album.streamingLinks.appleMusic}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="label-caps text-accent hover:text-accent/80 transition-colors flex items-center gap-1"
+                        className="min-h-11 label-caps text-accent hover:text-accent/80 transition-colors flex items-center gap-1"
                       >
                         Apple <ExternalLink size={9} />
                       </a>
@@ -87,7 +87,7 @@ const Discography = () => (
                         href={album.streamingLinks.bandcamp}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="label-caps text-accent hover:text-accent/80 transition-colors flex items-center gap-1"
+                        className="min-h-11 label-caps text-accent hover:text-accent/80 transition-colors flex items-center gap-1"
                       >
                         Bandcamp <ExternalLink size={9} />
                       </a>

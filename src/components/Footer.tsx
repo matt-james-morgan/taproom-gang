@@ -1,6 +1,6 @@
 const Footer = () => (
   <footer className="pt-20 pb-10 bg-background border-t border-border/30">
-    <div className="container mx-auto px-8 md:px-16">
+    <div className="container mx-auto px-5 md:px-16">
 
       {/* Large centred logo */}
       <div className="flex justify-center mb-12">
@@ -18,7 +18,7 @@ const Footer = () => (
         </span>
         <a
           href="mailto:thetaproomgang@gmail.com"
-          className="label-caps text-muted-foreground hover:text-primary transition-colors"
+          className="py-3 label-caps text-muted-foreground hover:text-primary transition-colors"
         >
           {/* TODO: Replace with real email */}
           thetaproomgang@gmail.com
